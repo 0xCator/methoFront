@@ -12,9 +12,16 @@
     "@types/react-dom": "^18.3.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
+<<<<<<< HEAD
     "react-router-dom": "^6.23.0",
+=======
+    "react-router-dom": "^6.22.3",
+>>>>>>> 0cb465942d959c0252d4c4b06a0ddae4153472ff
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
+    "bootstrap": "^4.6.2",
+    "react-bootstrap": "^2.10.2",
+    "jwt-decode": "^3.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
