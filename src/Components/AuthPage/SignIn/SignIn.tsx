@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './SignIn.css';
 
 const SignIn: React.FC = () => {
     const loginErrorRef = useRef<string | null>(null);
@@ -38,29 +40,27 @@ const SignIn: React.FC = () => {
     };
 
     return (
-        <div className='login-form'>
-            <div className='login-form__header'>
+        <div className='container center col-sm-4'>
+            <div>
                 <h1>Login</h1>
             </div>
-            <div className='login-form__body'>
+            <div>
                 <form onSubmit={login}>
                     <div className='form-group'>
                         <label htmlFor='username'>Username</label>
-                        <input type='text' id='username' ref={usernameRef} />
+                        <input type='text' id='username' ref={usernameRef} className='form-control' />
                     </div>
                     <div className='form-group'>
                         <label htmlFor='password'>Password</label>
-                        <input type='password' id='password' ref={passwordRef} />
+                        <input type='password' id='password' ref={passwordRef} className='form-control' />
                     </div>
-                    <button type='submit'>Login</button>
+                    <button type='submit' className='btn btn-primary'>Login</button>
                 </form>
                 {loginErrorRef.current && 
                     <div className='error-message'>{loginErrorRef.current}</div>
                 }
-            </div>
-            <div>
-                <p>Username: {usernameRef.current?.value}</p>
-                <p>Password: {passwordRef.current?.value}</p>
+                <br/>
+                <p className='text-center'>Don't have an account? <Link to="/register">Sign up here!</Link></p>
             </div>
         </div>
     );
