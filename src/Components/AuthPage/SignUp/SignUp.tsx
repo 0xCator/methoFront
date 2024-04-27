@@ -4,6 +4,7 @@ const SignUp: React.FC = () => {
     const [signupError, setSignupError] = useState<string | null>(null);
     const userName = useRef<HTMLInputElement>(null);
     const name = useRef<HTMLInputElement>(null);
+    const email = useRef<HTMLInputElement>(null);
     const password = useRef<HTMLInputElement>(null);
 
     const signup = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -11,6 +12,7 @@ const SignUp: React.FC = () => {
         const data ={
             UserName: userName.current?.value,
             Name: name.current?.value,
+            Email: email.current?.value,
             Password: password.current?.value
         };
         console.log(data);
@@ -46,6 +48,10 @@ const SignUp: React.FC = () => {
                     <div className='form-group'>
                         <label htmlFor='UserName'>Username</label>
                         <input type='text' id='UserName' name='UserName' ref={userName} />
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='Email'>Email</label>
+                        <input type='email' id='Email' name='Email' ref={email} />
                     </div>
                     <div className='form-group'>
                         <label htmlFor='Name'>Name</label>

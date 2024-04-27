@@ -1,29 +1,28 @@
-import React, { useState, useRef, useEffect } from 'react';
+import Header from '../Header/header';
+import { imageData } from '../../Services/images';
+import ImageView from './ImageView/ImageView';
 
 function MainPage() {
-    // State example
-    const [count, setCount] = useState(0);
-
-    // Ref example
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    // Effect example
-    useEffect(() => {
-        // Code to run on component mount or when count changes
-        console.log('Component mounted or count changed');
-        
-        // Cleanup function (optional)
-        return () => {
-            console.log('Component unmounted');
-        };
-    }, [count]);
-
     return (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={() => setCount(count + 1)}>Increment</button>
-            <input ref={inputRef} type="text" />
-        </div>
+        <>
+            <Header/>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <h1>Welcome to Image Processing</h1>
+                        <p>Here you could find some images generated out of users' uploads!</p>
+                    </div>
+                </div>
+            </div>
+            <br></br>
+            <div className="d-flex flex-wrap justify-content-center align-items-center">
+                {imageData.map((image) => {
+                    return (
+                        <ImageView path={image.path} creatorName={image.creatorName} />
+                    );
+                })}
+            </div>
+        </>
     );
 }
 

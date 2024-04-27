@@ -1,31 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { ImageFile } from "../../../Services/images";
 
-function ImageView() {
-    // State example
-    const [count, setCount] = useState(0);
-
-    // Ref example
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    // Effect example
-    useEffect(() => {
-        // Code to run on component mount or update
-        console.log('Component mounted or updated');
-
-        // Code to run on component unmount
-        return () => {
-            console.log('Component unmounted');
-        };
-    }, []);
-
-    return (
-        <div>
-            <h1>ImageView Component</h1>
-            <p>Count: {count}</p>
-            <button onClick={() => setCount(count + 1)}>Increment</button>
-            <input ref={inputRef} type="text" />
+const ImageView: React.FC<ImageFile> = (props) => {
+    return <div className="cardDesign">
+        <div className="card">
+            <img className="card-img-top" src={props.path} alt="" />
+            <div className="card-body">
+                <h4 className="card-title">{props.creatorName}</h4>
+            </div>
         </div>
-    );
+    </div>
 }
 
 export default ImageView;
