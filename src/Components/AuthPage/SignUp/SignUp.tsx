@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './SignUp.css';
+import './SignUp.module.css';
 
 const SignUp: React.FC = () => {
     const [signupError, setSignupError] = useState<string | null>(null);

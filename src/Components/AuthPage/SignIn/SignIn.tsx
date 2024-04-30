@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './SignIn.css';
+import './SignIn.module.css';
 
 const SignIn: React.FC = () => {
     const loginErrorRef = useRef<string | null>(null);
