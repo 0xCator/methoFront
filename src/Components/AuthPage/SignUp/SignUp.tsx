@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './SignUp.module.css';
+import styles from './SignUp.module.css';
 
 const SignUp: React.FC = () => {
     const [signupError, setSignupError] = useState<string | null>(null);
@@ -41,7 +41,7 @@ const SignUp: React.FC = () => {
         }
     };
     return (
-        <div className='container center col-sm-4'>
+        <div className={`container col-sm-4 ${styles.container}`}>
             <div>
                 <h1>Register</h1>
             </div>
@@ -49,19 +49,19 @@ const SignUp: React.FC = () => {
                 <form onSubmit={signup}>
                 <div className='form-group'>
                         <label htmlFor='Name'>Name</label>
-                        <input type='text' id='Name' name='Name' ref={name} className='form-control'/>
+                        <input type='text' id='Name' name='Name' ref={name} className={`form-control ${styles.formcontrol}`}/>
                     </div>
                     <div className='form-group'>
                         <label htmlFor='UserName'>Username</label>
-                        <input type='text' id='UserName' name='UserName' ref={userName} className='form-control' />
+                        <input type='text' id='UserName' name='UserName' ref={userName} className={`form-control ${styles.formcontrol}`} />
                     </div>
                     <div className='form-group'>
                         <label htmlFor='Email'>Email</label>
-                        <input type='email' id='Email' name='Email' ref={email} className='form-control'/>
+                        <input type='email' id='Email' name='Email' ref={email} className={`form-control ${styles.formcontrol}`}/>
                     </div>
                     <div className='form-group'>
                         <label htmlFor='Password'>Password</label>
-                        <input type='password' id='Password' name='Password' ref={password} className='form-control'/>
+                        <input type='password' id='Password' name='Password' ref={password} className={`form-control ${styles.formcontrol}`}/>
                     </div>
                     <button type='submit' className='btn btn-primary'>Register</button>
                 </form>

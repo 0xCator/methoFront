@@ -1,20 +1,13 @@
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin-top: 20vh; 
-  }
-
-  .container{
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin-top: 10vh;
-    margin-left: 60vh;
-  }
+.container{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  padding: 20px;
+  border-radius: 5px;
+}
   
-  form {
-    width: 100%;
-  }
+.formcontrol {
+  width: 100%;
+}

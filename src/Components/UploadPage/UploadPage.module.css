@@ -1,13 +1,13 @@
-  .container{
+.container{
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 20vh;
     padding: 20px;
     border-radius: 5px;
   }
-    
-  .formcontrol {
-    width: 100%;
-}
+  
+    .formcontrol {
+        width: 50%;
+    }

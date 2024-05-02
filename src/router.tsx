@@ -3,7 +3,8 @@ import MainPage from "./Components/MainPage/MainPage";
 import SignIn from "./Components/AuthPage/SignIn/SignIn";
 import SignUp from "./Components/AuthPage/SignUp/SignUp";
 import path from "path";
-import { UploadPage } from "./Components/UploadPage/UploadPage";
+import  UploadPage  from "./Components/UploadPage/UploadPage";
+import { Modal } from "react-bootstrap";
 const { createBrowserRouter } = require("react-router-dom");
 
 export const router = createBrowserRouter([
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/upload",
-                element: <UploadPage />
+                element: <UploadPage/>
             }
         ]
     }

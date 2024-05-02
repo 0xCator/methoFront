@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './SignIn.module.css';
+import styles from './SignIn.module.css';
 
 const SignIn: React.FC = () => {
     const loginErrorRef = useRef<string | null>(null);
@@ -40,7 +40,7 @@ const SignIn: React.FC = () => {
     };
 
     return (
-        <div className='container center col-sm-4'>
+        <div className={`container col-sm-4 ${styles.container}`}>
             <div>
                 <h1>Login</h1>
             </div>
@@ -48,11 +48,11 @@ const SignIn: React.FC = () => {
                 <form onSubmit={login}>
                     <div className='form-group'>
                         <label htmlFor='username'>Username</label>
-                        <input type='text' id='username' ref={usernameRef} className='form-control' />
+                        <input type='text' id='username' ref={usernameRef} className={`form-control ${styles.formcontrol}`} />
                     </div>
                     <div className='form-group'>
                         <label htmlFor='password'>Password</label>
-                        <input type='password' id='password' ref={passwordRef} className='form-control' />
+                        <input type='password' id='password' ref={passwordRef} className={`form-control ${styles.formcontrol}`} />
                     </div>
                     <button type='submit' className='btn btn-primary'>Login</button>
                 </form>
