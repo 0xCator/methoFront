@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { backendPath } from '../../../Services/constants';
+import Header from '../../Header/header';
 import styles from './SignUp.module.css';
 
 const SignUp: React.FC = () => {
@@ -44,6 +45,8 @@ const SignUp: React.FC = () => {
         }
     };
     return (
+    <>
+        <Header/>
         <div className={`container col-sm-4 ${styles.container}`}>
             <div>
                 <h1>Register</h1>
@@ -76,6 +79,7 @@ const SignUp: React.FC = () => {
                 <p className='text-center'>Already have an account? <Link to="/login">Log in here!</Link></p>
             </div>
         </div>
+    </>
     );
     
 };
