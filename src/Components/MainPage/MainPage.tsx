@@ -2,7 +2,6 @@ import Header from '../Header/header';
 import { ImageFile } from '../../Services/images';
 import ImageView from './ImageView/ImageView';
 import { useEffect, useState } from 'react';
-import { getUserData } from '../../Services/userData';
 import axios from 'axios';
 import { backendPath } from '../../Services/constants';
 
@@ -12,7 +11,6 @@ function MainPage() {
         result: [] as ImageFile[],
         err: null,
       });
-    const userData = getUserData();
 
       const loadingSpinner = () => {
         return (
