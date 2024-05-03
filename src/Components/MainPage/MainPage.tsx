@@ -25,22 +25,36 @@ function MainPage() {
       };
 
     useEffect(() => {
-            axios
-                .get(backendPath + '/api/Image', {
-                })
-                .then((response) => {
-                    const tempGallery: ImageFile[] = [];
-                    response.data.forEach((imageFile: ImageFile) => {
-                        imageFile.filePath = backendPath + "/" + imageFile.filePath;
-                        tempGallery.push(imageFile);
-                    });
-                    setGallery({...gallery, loading: false, result: tempGallery});
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+        fetch(backendPath + '/api/Image')
+        .then(response => response.json())
+        .then(data => {
+            const tempGallery: ImageFile[] = [];
+            data.forEach((imageFile: ImageFile) => {
+                imageFile.filePath = backendPath + "/" + imageFile.filePath;
+                tempGallery.push(imageFile);
+            });
+            setGallery({...gallery, loading: false, result: tempGallery});
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }, []);
 
-    })
+    // axios
+    //     .get(backendPath + '/api/Image', {
+    //     })
+    //     .then((response) => {
+    //         const tempGallery: ImageFile[] = [];
+    //         response.data.forEach((imageFile: ImageFile) => {
+    //             imageFile.filePath = backendPath + "/" + imageFile.filePath;
+    //             tempGallery.push(imageFile);
+    //         });
+    //         setGallery({...gallery, loading: false, result: tempGallery});
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     });
+
     return (
         <>
             <Header/>
