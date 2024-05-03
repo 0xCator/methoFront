@@ -27,12 +27,8 @@ function MainPage() {
       };
 
     useEffect(() => {
-        if (userData !== null) {
             axios
                 .get(backendPath + '/api/Image', {
-                    headers: {
-                        Authorization: 'Bearer ' + userData.token,
-                    },
                 })
                 .then((response) => {
                     const tempGallery: ImageFile[] = [];
@@ -46,7 +42,6 @@ function MainPage() {
                     console.log(error);
                 });
 
-        }
     })
     return (
         <>
@@ -55,21 +50,12 @@ function MainPage() {
                 <div className="row">
                     <div className="col-md-12">
                         <h1>Welcome to Image Processing</h1>
-                        <p>Here you could find some images generated out of users' uploads!</p>
+                        <p>In a world of ones and zeros, even abstract art can be computed!</p>
                     </div>
                 </div>
             </div>
             <br></br>
-
-            {userData === null ? 
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                        <h1>Sign in to view images</h1>
-                        </div>
-                        </div>
-                        </div>:
-            (gallery.loading ? loadingSpinner() : 
+           {(gallery.loading ? loadingSpinner() : 
             <div className="d-flex flex-wrap justify-content-center align-items-center">
                 {gallery.result.map((image) => {
                     return (
