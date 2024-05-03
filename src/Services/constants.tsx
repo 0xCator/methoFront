@@ -1,1 +1,1 @@
-export const backendPath: string = "https://localhost:7028";
+export const backendPath: string = "http://localhost:5024";
