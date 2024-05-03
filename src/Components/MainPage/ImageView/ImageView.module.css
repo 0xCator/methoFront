@@ -1,0 +1,12 @@
+.imageSize {
+    max-width: 256px;
+    max-height: 256px;
+}
+
+.titleSize {
+    font-size: 1em;
+}
+
+.textSize {
+    font-size: 0.8em;
+}

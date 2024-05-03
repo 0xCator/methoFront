@@ -1,0 +1,1 @@
+export const backendPath: string = "https://localhost:7028";

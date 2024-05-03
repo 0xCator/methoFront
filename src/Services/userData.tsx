@@ -1,5 +1,17 @@
+import jwt from "jwt-decode";
+
+interface User {
+    sub: string
+}
+
 export const getUserData = () => {
-    return localStorage.getItem('userData');
+    if (localStorage.getItem('userData')) {
+        const user: User = jwt(localStorage.getItem('userData')!);
+        return {user, token: localStorage.getItem('userData')};
+    }
+    else {
+        return null;
+    }
 }
 
 export const setUserData = (data: any) => {

@@ -1,8 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { backendPath } from '../../../Services/constants';
+import { setUserData } from '../../../Services/userData';
 import styles from './SignIn.module.css';
 
 const SignIn: React.FC = () => {
+    const navigate = useNavigate();
     const loginErrorRef = useRef<string | null>(null);
     const usernameRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
@@ -19,7 +22,7 @@ const SignIn: React.FC = () => {
 
         try {
             
-            const response = await fetch('/api/login', {
+            const response = await fetch(backendPath + '/api/Auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -33,6 +36,8 @@ const SignIn: React.FC = () => {
 
             const responseData = await response.json();
             console.log('Login successful', responseData);
+            setUserData(responseData.token);
+            navigate("/");
         } catch (error) {
             console.error('Login failed', error);
             loginErrorRef.current = 'Login failed. Please try again.';
