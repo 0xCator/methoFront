@@ -1,12 +1,25 @@
+
+
+.imageContainer {
+    position: relative;
+}
+
+.imageText {
+    position: absolute;
+    bottom: 10px; /* Adjust this value to position the text where you want */
+    left: 10px; /* Adjust this value to position the text where you want */
+    color: white; /* Text color */
+    font-size: 16px; /* Text size */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+    padding: 5px 10px; /* Padding around the text */
+}
+
+
 .imageSize {
-    max-width: 256px;
-    max-height: 256px;
+    width: 256px;
+    height: 256px;
 }
-
-.titleSize {
-    font-size: 1em;
-}
-
 .textSize {
     font-size: 0.8em;
 }
+
